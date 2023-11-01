@@ -63,11 +63,10 @@ class UpdateUserPayload extends AbstractPayload
 class UpdateUserResponse extends AbstractResponse
 {
   public user: { id: number, name: string, age: number };
-
 }
 
 // Define the event clas
-class ExampleEvent extends AbstractEvent<UpdateUserPayload, UpdateUserResponse>
+class UpdateUserEvent extends AbstractEvent<UpdateUserPayload, UpdateUserResponse>
 {
   // The getPayload method is used to convert the data passed into the event into the payload class
   // This allows the event constructor to accept a payload class instance or the necessary data to construct one
@@ -101,7 +100,7 @@ class ExampleEvent extends AbstractEvent<UpdateUserPayload, UpdateUserResponse>
 
 // Create an instance of the event (this will hydrate the relevant payload class by calling the getPayload method)
 // If the resulting payload instance is invalid, a TypeError will be thrown
-const event = new ExampleEvent({ id: 1, name: "John McClane", age: 35 });
+const event = new UpdateUserEvent({ id: 1, name: "John McClane", age: 35 });
 // The event can be executed by calling the execute method (this internally calls the process method)
 event.execute();
 
