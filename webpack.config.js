@@ -1,20 +1,21 @@
 module.exports = {
   plugins: [],
-  mode:    process.env.ENV === 'dev' ? 'development' : 'production',
+  mode:    process.env.ENV === "dev" ? "development" : "production",
   // Entry
   entry: {
-    index: './index.ts'
+    index: "./index.ts"
   },
   // Output
   output:  {
-    filename: '[name].min.js',
-    path:     `${__dirname}/dist`,
-    library: {
+    filename:     "[name].min.js",
+    path:         `${__dirname}/dist`,
+    library:      {
       type: "umd"
-    }
+    },
+    globalObject: "this"
   },
   resolve: {
-    extensions: [".ts", ".tsx", ".js", ".json"]
+    extensions: [ ".ts", ".tsx", ".js", ".json" ]
   },
   // Loaders
   module: {
@@ -22,7 +23,7 @@ module.exports = {
       // TypeScript
       {
         test: /\.(ts|tsx)$/,
-        use:  [{ loader:  'ts-loader' }]
+        use:  [ { loader: "ts-loader" } ]
       }
     ]
   }
