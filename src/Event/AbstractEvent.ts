@@ -1,9 +1,8 @@
 import { PublicProperties } from "../Type/PublicProperties";
 import { AbstractPayload } from "../Payload/AbstractPayload";
-import { AbstractResponse } from "../Response/AbstractResponse";
 import { EventInterface } from "./EventInterface";
 
-export abstract class AbstractEvent<Payload extends AbstractPayload, Response extends AbstractResponse | Promise<AbstractResponse>> implements EventInterface<Response>
+export abstract class AbstractEvent<Payload extends AbstractPayload, Response> implements EventInterface<Response>
 {
   private readonly payload: Payload;
 

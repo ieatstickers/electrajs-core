@@ -1,5 +1,4 @@
 import { AbstractPayload } from "../Payload/AbstractPayload";
-import { AbstractResponse } from "../Response/AbstractResponse";
 import { AbstractEvent } from "./AbstractEvent";
 import { PublicProperties } from "../Type/PublicProperties";
 
@@ -14,7 +13,7 @@ class TestPayload extends AbstractPayload
   }
 }
 
-class TestResponse extends AbstractResponse
+class TestResponse
 {
   public exampleResponseProperty: string = null;
   public anotherExampleResponseProperty: number = null;

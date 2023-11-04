@@ -1,6 +1,5 @@
-import { AbstractResponse } from "../Response/AbstractResponse";
 
-export interface EventInterface<Response extends AbstractResponse | Promise<AbstractResponse>>
+export interface EventInterface<Response>
 {
-  execute(): Response | Promise<Response>
+  execute(): Response
 }
