@@ -105,3 +105,7 @@ const event = new UpdateUserEvent({ id: 1, name: "John McClane", age: 35 });
 event.execute();
 
 ```
+
+## License
+
+[MIT](https://choosealicense.com/licenses/mit/)
